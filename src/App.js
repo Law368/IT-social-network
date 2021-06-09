@@ -10,18 +10,35 @@ import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
 
-function App() {
+let posts = [
+  {id: 1, message: 'Hi, How are you', likesCount: 12},
+  {id: 2, message: 'First post', likesCount: 11},
+  {id: 3, message: '111', likesCount: 20},
+  {id: 4, message: '2222', likesCount: 35},
+  {id: 5, message: '3333', likesCount: 33},
+  {id: 6, message: '44444', likesCount: 27}
+]
+
+
+function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header /> 
         <Navbar />
         <div className='app-wrapper-content'>
-          <Route path='/dialogs' component={Dialogs}/>
+          {/* <Route path='/dialogs' component={Dialogs}/>
           <Route path='/profile' component={Profile}/>
           <Route path='/news' component={News}/>
           <Route path='/music' component={Music}/>
-          <Route path='/settings' component={Settings}/>
+          <Route path='/settings' component={Settings}/> */}
+        
+        <Route path='/dialogs' render={() => <Dialogs />}/>
+        <Route path='/profile' render={() => <Profile posts={posts}/>}/>
+        <Route path='/news' render={() => <News />}/>
+        <Route path='/music' render={() => <Music />}/>
+        <Route path='/settings' render={() => <Settings />}/>
+
         </div>
       </div>
     </BrowserRouter>
