@@ -12,7 +12,7 @@ let newPostElement = React.createRef();
 
 let addPost = () => {
   let text = newPostElement.current.value;
-  alert('aaaa');
+  props.addPost(text);
   
 }
 
