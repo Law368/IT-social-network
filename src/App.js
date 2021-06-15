@@ -15,7 +15,6 @@ import Settings from './components/Settings/Settings.jsx';
 
 function App(props) {
   return (
-    <BrowserRouter>
       <div className='app-wrapper'>
         <Header /> 
         <Navbar />
@@ -34,7 +33,6 @@ function App(props) {
 
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
