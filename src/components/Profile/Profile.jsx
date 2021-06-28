@@ -5,10 +5,13 @@ import s from './Profile.module.css';
 
 const Profile = (props) => {
     return (
-    <div>
-        <ProfileInfo />
-        <MyPosts posts={props.state.posts} addPost={props.addPost}/>
-    </div>
+        <div>
+            <ProfileInfo />
+            <MyPosts posts={props.profilePage.posts}
+                newPostText={props.profilePage.newPostText}
+                updateNewPostText={props.updateNewPostText}
+                addPost={props.addPost} />
+        </div>
     )
 }
 
