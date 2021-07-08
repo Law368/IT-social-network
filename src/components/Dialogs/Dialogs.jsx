@@ -10,26 +10,37 @@ const DialogItem = (props) => {
     let path = "/dialogs/" + props.id
 
     return <div className={`${s.dialog} ${s.active}`}>
-    <NavLink to={path}>{props.name}</NavLink>
-            </div>
+        <NavLink to={path}>{props.name}</NavLink>
+    </div>
 }
 
 const Dialogs = (props) => {
+
+    let dialogsData = [
+        { id: 1, name: "Iroh" },
+        { id: 2, name: "Bang" },
+        { id: 3, name: "Snow" },
+        { id: 4, name: "Cloud" },
+        { id: 5, name: "Tide" },
+    ]
+
+    let messagesData = [
+        { id: 1, message: "Study" },
+        { id: 2, message: "for" },
+        { id: 3, message: "the" },
+        { id: 4, message: "Future" },
+    ]
+
     return (
         <div className={s.dialogs}>
-                <div className={s.dialogsItems}>
-                   <DialogItem name="User 1" id="1"/>
-                   <DialogItem name="User 2" id="2"/>
-                   <DialogItem name="User 3" id="3"/>
-                   <DialogItem name="User 4" id="4"/>
-                   <DialogItem name="User 5" id="5"/>
-                   <DialogItem name="User 6" id="6"/>
-                </div>
-                <div className={s.messages}>
-                    <Message message="Hi"/>
-                    <Message message="Test"/>
-                    <Message message="111"/>
-                </div>
+            <div className={s.dialogsItems}>
+                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
+                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
+            </div>
+            <div className={s.messages}>
+                <Message message={messagesData[0].message} />
+                <Message message={messagesData[1].message} />
+            </div>
         </div>
     )
 }
