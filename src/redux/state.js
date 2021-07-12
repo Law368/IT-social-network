@@ -24,7 +24,9 @@ let state = {
         { id: 4, message: "Future" },
         { id: 5, message: "of yours" },
     ],
-}
+},
+    sidebar: {
+},
 }
 
 export default state;
