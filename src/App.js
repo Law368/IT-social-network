@@ -9,7 +9,7 @@ import Dialogs from './components/Dialogs/Dialogs.jsx';
 import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
-import {updateNewPostText} from "./redux/state";
+import store from "./redux/state";
 
 function App(props) {
   return (
@@ -18,7 +18,7 @@ function App(props) {
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-          <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />} />
+          <Route path='/dialogs' render={() => <Dialogs store={store} />} />
           <Route path='/profile' render={() => <Profile
               profilePage={props.state.profilePage}
               dispatch={props.dispatch}/>} />
